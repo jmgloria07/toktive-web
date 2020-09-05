@@ -27,3 +27,5 @@ Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplica
 
 ## Future Plans
 - Frontend files on this project are simple barebones HTML that calls the REST counterparts. I'm planning to create a separate front-end project that utilizes React or Angular.
+- Make it such that the client handles the authentication.
+- Exception handling/mapping, logging, better request-response objects, miscellaneous stuffs
