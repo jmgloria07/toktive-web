@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toktive</title>
+	</head>
+	<body>
+		<div class="main-block">
+			<h1>Toktive</h1>
+			<form action="/">
+				<div class="wrap-message">
+					<h3>Please type in your post</h3>
+					<textarea rows="4" name="message"></textarea>
+				</div>
+				<div class="wrap-networks">
+					<h3>Please choose the networks</h3>
+					<div>
+						<input type="checkbox" value="FB" id="cb-fb" name="networks"/>
+						<label for="cb-fb" class="radio">Facebook</label>
+					</div>
+					<div>
+						<input type="checkbox" value="TW" id="cb-tw" name="networks"/>
+						<label for="cb-tw" class="radio">Twitter</label>
+					</div>
+				</div>
+				<div class="wrap-submit">
+					<button type="submit" formaction="/share" formmethod="post">Submit</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
