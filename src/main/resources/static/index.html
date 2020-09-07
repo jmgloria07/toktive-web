@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.css"/>
 		<title>Toktive</title>
 	</head>
 	<body>
 		<div class="main-block">
 			<h1>Toktive</h1>
+			(name not final, suggestions are appreciated)
 			<form action="/">
 				<div class="wrap-message">
 					<h3>Please type in your post</h3>
@@ -13,9 +16,13 @@
 				</div>
 				<div class="wrap-networks">
 					<h3>Please choose the networks</h3>
-					<div>
-						<input type="checkbox" value="FB" id="cb-fb" name="networks"/>
+					<div class="strikethrough">
+						<input type="checkbox" value="" id="cb-fb" name="networks" disabled/>
 						<label for="cb-fb" class="radio">Facebook</label>
+					</div>
+					<div>
+						<input type="checkbox" value="FB_PAGES" id="cb-fbpg" name="networks"/>
+						<label for="cb-fb" class="radio">Facebook Page</label>
 					</div>
 					<div>
 						<input type="checkbox" value="TW" id="cb-tw" name="networks"/>

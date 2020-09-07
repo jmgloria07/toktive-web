@@ -21,7 +21,7 @@ While this is created using Eclipse, it's not necessary to stick with it. Also w
 ## Usage
 Simply run the project with Spring Boot, and it automatically creates all you need such as the web server already configured with a port together with the project deployed on it. You can do this at the console with the command:
 
-`mvnw run:spring-boot`
+`mvnw spring-boot:run`
 
 Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplication` as a Java Application once the setup is done.
 

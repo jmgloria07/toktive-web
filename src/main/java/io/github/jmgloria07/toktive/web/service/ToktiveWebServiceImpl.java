@@ -5,16 +5,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import io.github.jmgloria07.toktive.Toktive;
+import io.github.jmgloria07.toktive.api.Toktive;
+import io.github.jmgloria07.toktive.api.objects.ToktiveResponse;
 
 @Component
 public class ToktiveWebServiceImpl implements ToktiveWebService {
 
 	@Override
-	public String share(String message, List<String> networks) {
+	public List<ToktiveResponse> share(String message, List<String> networks) {
 		Toktive toktive = Toktive.getInstance();
-		toktive.share(message, new HashSet<>(networks));
-		return "SUCCESS";
+		return toktive.share(message, new HashSet<>(networks));
 	}
 
 }
