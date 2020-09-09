@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.jmgloria07.toktive.api.objects.ToktiveResponse;
+import io.github.jmgloria07.toktive.web.objects.SocialNetworkResponse;
 import io.github.jmgloria07.toktive.web.service.ToktiveWebService;
 
 @RestController
@@ -18,15 +19,15 @@ public class ToktiveShareController {
 	ToktiveWebService toktiveWebService;
 	
 	//TODO create a proper request-response object
-	@PostMapping(value = "/share")
+	@PostMapping(value = "/toktive")
 	public List<ToktiveResponse> share(@RequestParam String message, 
 			@RequestParam List<String> networks) {
 		return toktiveWebService.share(message, networks);
 	}
 	
-	@GetMapping(value = "/share")
-	public String loadPage() {
-		return "Please use POST";
+	@GetMapping(value = "/toktive")
+	public List<SocialNetworkResponse> getSocialNetworkData() {
+		return toktiveWebService.getSocialNetworks();
 	}
 	
 }
