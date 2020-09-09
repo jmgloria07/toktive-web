@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/toktive.css"/>
+		<script src="js/toktive.js"></script>
 		<title>Toktive</title>
 	</head>
 	<body>
@@ -16,21 +17,12 @@
 				</div>
 				<div class="wrap-networks">
 					<h3>Please choose the networks</h3>
-					<div class="strikethrough">
-						<input type="checkbox" value="" id="cb-fb" name="networks" disabled/>
-						<label for="cb-fb" class="radio">Facebook</label>
+					<div class="wrap-checkboxes" id="toktive-network-cbs">
 					</div>
-					<div>
-						<input type="checkbox" value="FB_PAGES" id="cb-fbpg" name="networks"/>
-						<label for="cb-fb" class="radio">Facebook Page</label>
-					</div>
-					<div>
-						<input type="checkbox" value="TW" id="cb-tw" name="networks"/>
-						<label for="cb-tw" class="radio">Twitter</label>
-					</div>
+					
 				</div>
 				<div class="wrap-submit">
-					<button type="submit" formaction="/share" formmethod="post">Submit</button>
+					<button type="submit" formaction="/toktive" formmethod="post">Submit</button>
 				</div>
 			</form>
 		</div>

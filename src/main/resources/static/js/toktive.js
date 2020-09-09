@@ -1,25 +1,39 @@
 // do an AJAX call GET /toktive
 // i'm not too motivated to use jquery here
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "/toktive", true);
-  xhttp.send();
+function loadSocialNetworks() {
+	let xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			processNetworks(this.responseText);
+		}
+	};
+	xhttp.open("GET", "/toktive", true);
+	xhttp.send();
 }
 
-function createCheckboxes(resp) {
-	socialJson = JSON.parse(resp);
-	//get social network
-	//parse social network to checkbox values
-	resp.ge
+function processNetworks(resp) {
+	let socialJson = JSON.parse(resp);
+	for (let index in socialJson) {
+		addCheckboxToDocument(socialJson[index]);
+	}
 }
 
-function setCheckboxesToDocument(){
-	//set to document
+function addCheckboxToDocument(network) {
+	//TODO: clean this code up
+	let template = document.createElement("template");
+	let checkboxId = 'cb-' + network.value;
+	htmlString = '<div><input type="checkbox" id="' + checkboxId + '" value="' +  network.value + '" name="networks"/><label for="' + checkboxId + '" class="radio">' + network.displayName + '</label></div>'
+	template.innerHTML = htmlString.trim();
+	
+	let elem = template.content.firstChild;
+	if (network.deprecated) {
+		elem.className = 'strikethrough';
+		document.getElementById('toktive-network-cbs').appendChild(elem);
+		document.getElementById(checkboxId).disabled = true;
+	} else {
+		document.getElementById('toktive-network-cbs').appendChild(elem);
+	}
 }
 
-// document ready
+window.onload = loadSocialNetworks;
+//document.addEventListener('load', loadSocialNetworks);
