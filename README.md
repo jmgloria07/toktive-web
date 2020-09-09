@@ -12,7 +12,9 @@ Please see the general motivation at the [API project](../../../toktive).
 I made this application in Eclipse 2020-06 (4.16.0), with full support for Java EE. Initial Spring classes and Maven config files are generated via Spring Initializr.
 
 To set this up in Eclipse, all you need to do is simply:
-1. [Setup Toktive on your workspace](../../../toktive/README.md). Remember to build the Toktive API first before having the web project built.
+1. [Setup Toktive on your workspace](../../../toktive/blob/master/README.md). 
+    - Remember to build the Toktive API first before having the web project built. 
+    - And make sure the maven versions at pom.xml are consistent at both projects
 2. Import the project via Git.
 3. Run an `mvnw install` (or `mvn` if you have it installed on your machine) and update the project.
 
@@ -24,6 +26,11 @@ Simply run the project with Spring Boot, and it automatically creates all you ne
 `mvnw spring-boot:run`
 
 Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplication` as a Java Application once the setup is done.
+
+### REST methods
+GET /toktive returns all social networks supported.
+
+POST /toktive will post the parameter status and return a `ToktiveResponse` object
 
 ## Future Plans
 - Frontend files on this project are simple barebones HTML that calls the REST counterparts. I'm planning to create a separate front-end project that utilizes React or Angular.
