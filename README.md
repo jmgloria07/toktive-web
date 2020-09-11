@@ -35,6 +35,7 @@ GET /toktive returns all social networks supported in a list of `SocialNetworkRe
 POST /toktive will post the parameter status and return a list `ToktiveResponse` objects.
 
 ## Future Plans
+- Create ToktiveWebResponse that returns a response in the proper context of the web project.
 - Exception handling/mapping, logging, better request-response objects, miscellaneous stuffs
 - Frontend files on this project are simple barebones HTML that calls the REST counterparts. I'm planning to create a separate front-end project that utilizes React or Angular.
 - Make it such that the client handles the authentication.
