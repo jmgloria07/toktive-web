@@ -27,6 +27,8 @@ Simply run the project with Spring Boot, and it automatically creates all you ne
 
 Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplication` as a Java Application once the setup is done.
 
+With this you can then run your server instance (usually localhost:8080) on your web browser and, post your thoughts to your social media accounts. 
+
 ### REST methods
 GET /toktive returns all social networks supported in a list of `SocialNetworkResponse` format.
 
