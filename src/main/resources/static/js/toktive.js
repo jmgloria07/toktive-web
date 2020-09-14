@@ -13,8 +13,9 @@ function loadSocialNetworks() {
 
 function processNetworks(resp) {
 	let socialJson = JSON.parse(resp);
-	for (let index in socialJson) {
-		addCheckboxToDocument(socialJson[index]);
+	let socialNetworks = socialJson.socialNetworks
+	for (let index in socialNetworks) {
+		addCheckboxToDocument(socialNetworks[index]);
 	}
 }
 

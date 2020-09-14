@@ -16,7 +16,7 @@ To set this up in Eclipse, all you need to do is simply:
     - Remember to build the Toktive API first before having the web project built. 
     - And make sure the maven versions at pom.xml are consistent at both projects
 2. Import the project via Git.
-3. Run an `mvnw install` (or `mvn` if you have it installed on your machine) and update the project.
+3. Run an `mvnw install` (or `mvn` if you prefer your own maven instance installed on your machine) and update the project.
 
 While this is created using Eclipse, it's not necessary to actually use the same IDE. It helps to start having the project build with Maven and allow Git to be used. Please look up for the equivalent steps for your preferred IDE.
 
@@ -25,17 +25,21 @@ Simply run the project with Spring Boot, and it automatically creates all you ne
 
 `mvnw spring-boot:run`
 
-Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplication` as a Java Application once the setup is done.
+Or simply run the Main class `io.github.jmgloria07.toktive.web.ToktiveWebApplication` as a Java Application (through Eclipse) once the setup is done.
 
 With this you can then run your server instance (usually localhost:8080) on your web browser and, post your thoughts to your social media accounts. 
 
 ### REST methods
 GET /toktive returns all social networks supported in a list of `SocialNetworkResponse` format.
 
-POST /toktive will post the parameter status and return a list `ToktiveResponse` objects.
+GET /toktive/{social-network} returns a `SocialNetworkWeb` response as defined by the `{social-network}` path variable.
+
+POST /toktive will post the parameter status and return a `ToktiveWebResponse` object.
 
 ## Future Plans
-- Create ToktiveWebResponse that returns a response in the proper context of the web project.
-- Exception handling/mapping, logging, better request-response objects, miscellaneous stuffs
+- Utilize spring-boot's exception handling/mapping.
+- Improve tests.
+- Implement proper logging.
+- Apply basic security on the application.
+- Make it such that the client, rather than the API, handles the authentication.
 - Frontend files on this project are simple barebones HTML that calls the REST counterparts. I'm planning to create a separate front-end project that utilizes React or Angular.
-- Make it such that the client handles the authentication.

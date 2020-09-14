@@ -1,26 +1,29 @@
 package io.github.jmgloria07.toktive.web.objects;
 
+import java.util.List;
+
 public class SocialNetworkResponse {
-	private String value;
-	private String displayName;
-	private boolean deprecated;
 	
-	public String getValue() {
-		return value;
+	private int count;
+	private int deprecatedCount;
+	private List<SocialNetworkWeb> socialNetworks;
+	
+	public int getCount() {
+		return count;
 	}
-	public void setValue(String value) {
-		this.value = value;
+	public void setCount(int count) {
+		this.count = count;
 	}
-	public String getDisplayName() {
-		return displayName;
+	public int getDeprecatedCount() {
+		return deprecatedCount;
 	}
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
+	public void setDeprecatedCount(int deprecatedCount) {
+		this.deprecatedCount = deprecatedCount;
 	}
-	public boolean isDeprecated() {
-		return deprecated;
+	public List<SocialNetworkWeb> getSocialNetworks() {
+		return socialNetworks;
 	}
-	public void setDeprecated(boolean deprecated) {
-		this.deprecated = deprecated;
+	public void setSocialNetworks(List<SocialNetworkWeb> socialNetworks) {
+		this.socialNetworks = socialNetworks;
 	}
 }
